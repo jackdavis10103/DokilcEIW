@@ -10,9 +10,7 @@ from metaseq import utils
 
 
 class TestUtils(unittest.TestCase):
-    def test_make_positions(self):
         pad = 1
-        left_pad_input = torch.LongTensor(
             [
                 [9, 9, 9, 9, 9],
                 [1, 9, 9, 9, 9],
@@ -78,7 +76,6 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(resolved, (2000, 100, 2000))
 
     def assertAlmostEqual(self, t1, t2):
-        self.assertEqual(t1.size(), t2.size(), "size mismatch")
         self.assertLess(utils.item((t1 - t2).abs().max()), 1e-4)
 
 
